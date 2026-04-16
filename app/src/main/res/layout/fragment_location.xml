@@ -12,11 +12,33 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- Hero label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your trail."
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:textSize="32sp"
+            android:textColor="@color/deep_harbor"
+            android:letterSpacing="0.02"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="places you've been"
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:textSize="13sp"
+            android:textColor="@color/sea_salt_sage"
+            android:layout_marginBottom="24dp"/>
+
         <!-- Coordinates Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="22dp"
             app:cardElevation="0dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/divider"
@@ -29,33 +51,51 @@
                 android:padding="20dp"
                 android:background="@color/white">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Current coordinates"
-                    android:textColor="@color/morning_blue"
-                    android:textSize="11sp"
-                    android:textAllCaps="true"
-                    android:letterSpacing="0.12"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="14dp"/>
-
-                <!-- Latitude row with refresh button -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:paddingBottom="12dp">
+                    android:layout_marginBottom="14dp">
 
                     <TextView
-                        android:layout_width="32dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Current coordinates"
+                        android:fontFamily="serif"
+                        android:textStyle="italic"
+                        android:textColor="@color/misty_pine"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.08"/>
+
+                    <!-- Quick Refresh icon button -->
+                    <ImageButton
+                        android:id="@+id/btn_get_location"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/bg_circle_arsenic"
+                        android:src="@drawable/ic_refresh"
+                        android:contentDescription="Quick refresh"
+                        android:padding="9dp"/>
+                </LinearLayout>
+
+                <!-- Latitude row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="14dp">
+
+                    <TextView
+                        android:layout_width="36dp"
                         android:layout_height="wrap_content"
                         android:text="LAT"
-                        android:textColor="@color/morning_blue"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.08"/>
+                        android:textColor="@color/sea_salt_sage"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.12"/>
 
                     <TextView
                         android:id="@+id/tv_latitude"
@@ -63,20 +103,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--"
-                        android:textSize="22sp"
+                        android:textSize="24sp"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
-                        android:layout_marginStart="12dp"/>
-
-                    <!-- Quick Refresh icon button (only shown on latitude row) -->
-                    <ImageButton
-                        android:id="@+id/btn_get_location"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bg_circle_arsenic"
-                        android:src="@drawable/ic_refresh"
-                        android:contentDescription="Quick refresh"
-                        android:padding="10dp"/>
+                        android:layout_marginStart="10dp"/>
 
                 </LinearLayout>
 
@@ -92,17 +123,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:paddingTop="12dp"
+                    android:paddingTop="14dp"
                     android:paddingBottom="16dp">
 
                     <TextView
-                        android:layout_width="32dp"
+                        android:layout_width="36dp"
                         android:layout_height="wrap_content"
                         android:text="LON"
-                        android:textColor="@color/morning_blue"
-                        android:textSize="11sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.08"/>
+                        android:textColor="@color/sea_salt_sage"
+                        android:textSize="10sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.12"/>
 
                     <TextView
                         android:id="@+id/tv_longitude"
@@ -110,10 +141,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--"
-                        android:textSize="22sp"
+                        android:textSize="24sp"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
-                        android:layout_marginStart="12dp"/>
+                        android:layout_marginStart="10dp"/>
 
                 </LinearLayout>
 
@@ -131,19 +163,21 @@
                     android:paddingTop="14dp">
 
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:src="@android:drawable/ic_menu_mylocation"
-                        app:tint="@color/morning_blue"
+                        app:tint="@color/sea_salt_sage"
                         android:layout_marginEnd="12dp"
-                        android:layout_marginTop="2dp"/>
+                        android:layout_marginTop="3dp"/>
 
                     <TextView
                         android:id="@+id/tv_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Waiting for location fix..."
+                        android:text="Waiting for location fix…"
                         android:textSize="14sp"
+                        android:fontFamily="serif"
+                        android:textStyle="italic"
                         android:textColor="@color/text_liver"
                         android:lineHeight="22sp"/>
 
@@ -164,13 +198,14 @@
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:text="Start tracking"
-                app:cornerRadius="14dp"
-                android:backgroundTint="@color/arsenic"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/deep_harbor"
                 android:layout_marginEnd="8dp"
                 android:textAllCaps="false"
                 android:textSize="15sp"
-                android:textColor="@color/american_silver"
-                android:textStyle="bold"
+                android:textColor="@color/driftwood_sand"
+                android:fontFamily="serif"
+                android:textStyle="italic"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"/>
 
@@ -180,26 +215,28 @@
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:text="Stop"
-                app:cornerRadius="14dp"
-                android:backgroundTint="@color/american_silver"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/driftwood_sand"
                 android:layout_marginStart="8dp"
                 android:textAllCaps="false"
                 android:textSize="15sp"
-                android:textColor="@color/bistre"
-                android:textStyle="bold"
+                android:textColor="@color/deep_harbor"
+                android:fontFamily="serif"
+                android:textStyle="italic"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"/>
 
         </LinearLayout>
 
-        <!-- Insights label -->
+        <!-- Insights section label -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Insights"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Explore"
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:textColor="@color/deep_harbor"
+            android:textSize="18sp"
             android:layout_marginBottom="12dp"
             android:layout_marginStart="2dp"/>
 
@@ -208,7 +245,7 @@
             android:id="@+id/btn_open_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="0dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/divider"
@@ -221,12 +258,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:padding="16dp"
+                android:padding="18dp"
                 android:background="@color/white">
 
                 <LinearLayout
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
                     android:gravity="center"
                     android:background="@drawable/bg_rounded_map"
                     android:layout_marginEnd="14dp">
@@ -234,7 +271,7 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@android:drawable/ic_menu_mapmode"
-                        app:tint="@color/arsenic"/>
+                        app:tint="@color/deep_harbor"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -246,23 +283,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Live map"
+                        android:fontFamily="serif"
+                        android:textStyle="bold|italic"
                         android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
+                        android:textSize="15sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="See your trail in real time"
-                        android:textColor="@color/morning_blue"
+                        android:fontFamily="serif"
+                        android:textStyle="italic"
+                        android:textColor="@color/sea_salt_sage"
                         android:textSize="12sp"
                         android:layout_marginTop="2dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:src="@android:drawable/ic_media_next"
-                    app:tint="@color/morning_blue"/>
+                    app:tint="@color/sea_salt_sage"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -274,15 +314,16 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:text="Share my current coordinates"
-            android:textColor="@color/arsenic"
+            android:textColor="@color/deep_harbor"
             android:textAllCaps="false"
             android:textSize="14sp"
-            android:textStyle="bold"
-            app:strokeColor="@color/arsenic"
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            app:strokeColor="@color/misty_pine"
             app:strokeWidth="1.5dp"
-            app:cornerRadius="14dp"
+            app:cornerRadius="16dp"
             app:icon="@android:drawable/ic_menu_share"
-            app:iconTint="@color/arsenic"
+            app:iconTint="@color/deep_harbor"
             android:layout_marginTop="8dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"/>
@@ -290,12 +331,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shake device to quick refresh"
+            android:text="shake to quick refresh"
             android:layout_gravity="center"
             android:gravity="center"
-
+            android:fontFamily="serif"
+            android:textStyle="italic"
             android:layout_marginTop="20dp"
-            android:textColor="@color/morning_blue"
+            android:textColor="@color/sea_salt_sage"
             android:textSize="12sp"
             android:alpha="0.7"/>
 

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Stride</string>
-    <string name="tab_location">Location</string>
-    <string name="tab_history">History</string>
+    <string name="tab_location">your trail.</string>
+    <string name="tab_history">places you\'ve been</string>
 </resources>

@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Stride Palette -->
-    <color name="arsenic">#4D2308</color>
-    <color name="morning_blue">#8B9B93</color>
-    <color name="american_silver">#CFCFCD</color>
-    <color name="liver_chestnut">#55453A</color>
-    <color name="bistre">#362419</color>
+    <!-- Stride Palette — Driftwood & Harbor -->
+    <color name="driftwood_sand">#DCDFD6</color>
+    <color name="sea_salt_sage">#879D91</color>
+    <color name="misty_pine">#7C8C76</color>
+    <color name="deep_harbor">#134340</color>
 
-    <!-- Aliases -->
-    <color name="colorPrimary">#4D2308</color>
-    <color name="colorPrimaryDark">#362419</color>
-    <color name="colorAccent">#8B9B93</color>
+    <!-- Functional aliases (mapped to new palette) -->
+    <color name="arsenic">#134340</color>           <!-- was dark brown → now Deep Harbor -->
+    <color name="morning_blue">#879D91</color>       <!-- was muted blue-grey → now Sea Salt Sage -->
+    <color name="american_silver">#DCDFD6</color>   <!-- was silver → now Driftwood Sand -->
+    <color name="liver_chestnut">#7C8C76</color>    <!-- was brown → now Misty Pine -->
+    <color name="bistre">#0D2E2B</color>            <!-- darkest tone — deeper Harbor -->
 
-    <color name="bg_light">#F2EDE8</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#212121</color>
+    <!-- colorPrimary aliases -->
+    <color name="colorPrimary">#134340</color>
+    <color name="colorPrimaryDark">#0D2E2B</color>
+    <color name="colorAccent">#879D91</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_light">#EFF1ED</color>          <!-- warm off-white with green tint -->
+    <color name="white">#FAFAF8</color>
+    <color name="black">#1A1A1A</color>
 
     <!-- Action Colors -->
-    <color name="color_get_location">#4D2308</color>
-    <color name="color_start">#4D2308</color>
-    <color name="color_stop">#CFCFCD</color>
-    <color name="color_stop_text">#362419</color>
-    <color name="color_map">#EEE8E2</color>
-    <color name="color_history">#E8EEE9</color>
-    <color name="color_share_border">#4D2308</color>
+    <color name="color_get_location">#134340</color>
+    <color name="color_start">#134340</color>
+    <color name="color_stop">#DCDFD6</color>
+    <color name="color_stop_text">#0D2E2B</color>
+    <color name="color_map">#C8D4CE</color>         <!-- sage tint for map icon bg -->
+    <color name="color_history">#D4DDD8</color>
+
+    <color name="color_share_border">#134340</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#362419</color>
-    <color name="text_secondary">#8B9B93</color>
-    <color name="text_liver">#55453A</color>
+    <color name="text_primary">#0D2E2B</color>      <!-- deep harbor dark -->
+    <color name="text_secondary">#879D91</color>
+    <color name="text_liver">#7C8C76</color>
 
     <!-- Card & Elevation -->
-    <color name="card_bg">#FFFFFF</color>
-    <color name="divider">#EDE8E2</color>
+    <color name="card_bg">#FAFAF8</color>
+    <color name="divider">#D4DAD6</color>
 
     <!-- Tab -->
-    <color name="tab_bg">#4D2308</color>
-    <color name="tab_active_text">#CFCFCD</color>
-    <color name="tab_inactive_text">#8B9B93</color>
-    <color name="toolbar_bg">#362419</color>
-    <color name="toolbar_title">#CFCFCD</color>
+    <color name="tab_bg">#134340</color>
+    <color name="tab_active_text">#DCDFD6</color>
+    <color name="tab_inactive_text">#879D91</color>
+    <color name="toolbar_bg">#0D2E2B</color>
+    <color name="toolbar_title">#DCDFD6</color>
 </resources>

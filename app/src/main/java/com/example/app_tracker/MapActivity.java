@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -55,7 +56,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private List<LatLng> heatmapPoints = new ArrayList<>();
     private TileOverlay heatmapOverlay;
-    
+
     private String friendId;
     private DatabaseReference friendRef;
 
@@ -68,7 +69,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(friendId != null ? "Tracking: " + friendId : "Advanced Map View");
+            getSupportActionBar().setTitle(friendId != null ? "Tracking: " + friendId : "Live Map");
         }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -76,12 +77,20 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(@NonNull LocationResult locationResult) {
-                if (friendId == null) { // Only track self if not tracking a friend
+                if (friendId == null) {
                     Location location = locationResult.getLastLocation();
                     if (location != null) updateMapLocation(location.getLatitude(), location.getLongitude());
                 }
             }
         };
+
+        // Wire Android back button (hardware + gesture)
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+            }
+        });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -96,7 +105,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-        trailLine = mMap.addPolyline(new PolylineOptions().color(Color.BLUE).width(10).geodesic(true));
+        // Use Deep Harbor teal for the trail polyline
+        trailLine = mMap.addPolyline(new PolylineOptions()
+                .color(0xFF134340)   // Deep Harbor
+                .width(10)
+                .geodesic(true));
 
         if (friendId != null) {
             startFriendTracking();
@@ -129,7 +142,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void setupMap() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MAP_LOCATION_REQUEST);
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MAP_LOCATION_REQUEST);
             return;
         }
         mMap.setMyLocationEnabled(true);
@@ -137,7 +151,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void startLocationUpdates() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) return;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) return;
         LocationRequest locationRequest = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 3000).build();
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
     }
@@ -154,7 +169,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             currentMarker = mMap.addMarker(new MarkerOptions()
                     .position(current)
                     .title(friendId != null ? "Friend" : "Me")
-                    .icon(BitmapDescriptorFactory.defaultMarker(friendId != null ? BitmapDescriptorFactory.HUE_RED : BitmapDescriptorFactory.HUE_AZURE)));
+                    .icon(BitmapDescriptorFactory.defaultMarker(
+                            friendId != null
+                                    ? BitmapDescriptorFactory.HUE_RED
+                                    : BitmapDescriptorFactory.HUE_CYAN)));
         } else {
             currentMarker.setPosition(current);
         }
@@ -169,7 +187,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private void updateHeatmap() {
         if (heatmapPoints.size() < 2) return;
-        HeatmapTileProvider provider = new HeatmapTileProvider.Builder().data(heatmapPoints).radius(50).build();
+        HeatmapTileProvider provider = new HeatmapTileProvider.Builder()
+                .data(heatmapPoints).radius(50).build();
         if (heatmapOverlay != null) heatmapOverlay.remove();
         heatmapOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
     }
@@ -180,6 +199,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         fusedLocationClient.removeLocationUpdates(locationCallback);
     }
 
+    // Toolbar back arrow
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

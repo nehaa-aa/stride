@@ -8,20 +8,43 @@
     android:background="@color/bg_light"
     android:padding="20dp">
 
+    <!-- Hero heading -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="places you've been"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textSize="28sp"
+        android:textColor="@color/deep_harbor"
+        android:letterSpacing="0.02"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your trail, recorded"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textSize="13sp"
+        android:textColor="@color/sea_salt_sage"
+        android:layout_marginBottom="20dp"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_clear_history"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:text="Clear all history"
-        android:textColor="@color/liver_chestnut"
+        android:textColor="@color/misty_pine"
         android:textAllCaps="false"
         android:textSize="13sp"
-        android:textStyle="bold"
-        app:strokeColor="@color/divider"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        app:strokeColor="@color/misty_pine"
         app:strokeWidth="1dp"
-        app:cornerRadius="12dp"
-        android:backgroundTint="@color/american_silver"
+        app:cornerRadius="14dp"
+        android:backgroundTint="@color/bg_light"
         android:layout_marginBottom="16dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"/>

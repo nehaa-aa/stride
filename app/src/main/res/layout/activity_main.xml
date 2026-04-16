@@ -8,7 +8,7 @@
     android:background="@color/bg_light"
     tools:context=".MainActivity">
 
-    <!-- Toolbar -->
+    <!-- AppBar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -16,16 +16,37 @@
         android:background="@color/bistre"
         app:elevation="0dp">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <!-- Custom toolbar with serif title -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Stride"
-            app:subtitle="GPS Tracker"
-            app:titleTextColor="@color/american_silver"
-            app:subtitleTextColor="@color/morning_blue"
-            app:titleCentered="true"
-            app:subtitleCentered="true" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stride."
+                android:fontFamily="serif"
+                android:textStyle="italic"
+                android:textSize="26sp"
+                android:textColor="@color/american_silver"
+                android:letterSpacing="0.03"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="always know where you are"
+                android:fontFamily="serif"
+                android:textStyle="italic"
+                android:textSize="11sp"
+                android:textColor="@color/morning_blue"
+                android:letterSpacing="0.05"
+                android:layout_marginTop="1dp"/>
+
+        </LinearLayout>
 
         <!-- Tabs -->
         <com.google.android.material.tabs.TabLayout
@@ -36,7 +57,7 @@
             app:tabTextColor="@color/morning_blue"
             app:tabSelectedTextColor="@color/american_silver"
             app:tabIndicatorColor="@color/american_silver"
-            app:tabIndicatorHeight="2.5dp"
+            app:tabIndicatorHeight="2dp"
             app:tabMode="fixed"
             app:tabGravity="fill"
             app:tabTextAppearance="@style/TabTextStyle" />

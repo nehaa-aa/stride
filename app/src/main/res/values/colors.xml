@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Stride Palette — Driftwood & Harbor -->
-    <color name="driftwood_sand">#DCDFD6</color>
-    <color name="sea_salt_sage">#879D91</color>
-    <color name="misty_pine">#7C8C76</color>
-    <color name="deep_harbor">#134340</color>
+    <!-- Stride Palette — Sea & Sage -->
+    <color name="driftwood_sand">#DFF3F5</color>      <!-- Sea Mist -->
+    <color name="sea_salt_sage">#707F84</color>        <!-- Sage -->
+    <color name="misty_pine">#707F84</color>           <!-- Sage -->
+    <color name="deep_harbor">#899689</color>          <!-- Muted Teal -->
 
-    <!-- Functional aliases (mapped to new palette) -->
-    <color name="arsenic">#134340</color>           <!-- was dark brown → now Deep Harbor -->
-    <color name="morning_blue">#879D91</color>       <!-- was muted blue-grey → now Sea Salt Sage -->
-    <color name="american_silver">#DCDFD6</color>   <!-- was silver → now Driftwood Sand -->
-    <color name="liver_chestnut">#7C8C76</color>    <!-- was brown → now Misty Pine -->
-    <color name="bistre">#0D2E2B</color>            <!-- darkest tone — deeper Harbor -->
+    <!-- Functional aliases -->
+    <color name="arsenic">#899689</color>              <!-- Muted Teal -->
+    <color name="morning_blue">#707F84</color>         <!-- Sage -->
+    <color name="american_silver">#DFF3F5</color>      <!-- Sea Mist -->
+    <color name="liver_chestnut">#707F84</color>       <!-- Sage -->
+    <color name="bistre">#2A5A6A</color>               <!-- Darker Teal -->
 
     <!-- colorPrimary aliases -->
-    <color name="colorPrimary">#134340</color>
-    <color name="colorPrimaryDark">#0D2E2B</color>
-    <color name="colorAccent">#879D91</color>
+    <color name="colorPrimary">#899689</color>
+    <color name="colorPrimaryDark">#2A5A6A</color>
+    <color name="colorAccent">#7EC8E3</color>          <!-- Sea Green -->
 
     <!-- Backgrounds -->
-    <color name="bg_light">#EFF1ED</color>          <!-- warm off-white with green tint -->
-    <color name="white">#FAFAF8</color>
+    <color name="bg_light">#EEF8F5</color>             <!-- soft sea-tinted white -->
+    <color name="white">#F7FDFB</color>
     <color name="black">#1A1A1A</color>
 
     <!-- Action Colors -->
-    <color name="color_get_location">#134340</color>
-    <color name="color_start">#134340</color>
-    <color name="color_stop">#DCDFD6</color>
-    <color name="color_stop_text">#0D2E2B</color>
-    <color name="color_map">#C8D4CE</color>         <!-- sage tint for map icon bg -->
-    <color name="color_history">#D4DDD8</color>
+    <color name="color_get_location">#899689</color>
+    <color name="color_start">#899689</color>
+    <color name="color_stop">#DFF3F5</color>
+    <color name="color_stop_text">#2A5A6A</color>
+    <color name="color_map">#7EC8E3</color>            <!-- Sea Green for map icon bg -->
+    <color name="color_history">#C8EFE3</color>
 
-    <color name="color_share_border">#134340</color>
+    <color name="color_share_border">#899689</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#0D2E2B</color>      <!-- deep harbor dark -->
-    <color name="text_secondary">#879D91</color>
-    <color name="text_liver">#7C8C76</color>
+    <color name="text_primary">#2A5A6A</color>         <!-- deep teal dark -->
+    <color name="text_secondary">#707F84</color>       <!-- sage -->
+    <color name="text_liver">#707F84</color>           <!-- sage -->
 
     <!-- Card & Elevation -->
-    <color name="card_bg">#FAFAF8</color>
-    <color name="divider">#D4DAD6</color>
+    <color name="card_bg">#F7FDFB</color>
+    <color name="divider">#C4DDD8</color>
 
     <!-- Tab -->
-    <color name="tab_bg">#134340</color>
-    <color name="tab_active_text">#DCDFD6</color>
-    <color name="tab_inactive_text">#879D91</color>
-    <color name="toolbar_bg">#0D2E2B</color>
-    <color name="toolbar_title">#DCDFD6</color>
+    <color name="tab_bg">#899689</color>
+    <color name="tab_active_text">#DFF3F5</color>
+    <color name="tab_inactive_text">#707F84</color>
+    <color name="toolbar_bg">#2A5A6A</color>
+    <color name="toolbar_title">#DFF3F5</color>
 </resources>

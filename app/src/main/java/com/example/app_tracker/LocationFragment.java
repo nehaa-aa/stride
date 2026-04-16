@@ -127,16 +127,14 @@ public class LocationFragment extends Fragment implements SensorEventListener {
     }
 
     private void showLocationActionDialog() {
-        String[] options = {"Share Current Location (Text)", "Share My Tracking ID", "Track a Friend"};
+        String[] options = {"Share Current Location (Text)", "Share My Tracking ID"};
         new AlertDialog.Builder(requireContext())
                 .setTitle("Location Actions")
                 .setItems(options, (dialog, which) -> {
                     if (which == 0) shareCurrentLocationText();
                     else if (which == 1) shareTrackingId();
-                    else showTrackFriendDialog();
                 }).show();
     }
-
     private void showTrackFriendDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("Track a Friend");

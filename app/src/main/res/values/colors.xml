@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Professional & Colorful Palette -->
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    
-    <color name="bg_light">#F8F9FA</color>
+    <!-- Stride Palette -->
+    <color name="arsenic">#4D2308</color>
+    <color name="morning_blue">#8B9B93</color>
+    <color name="american_silver">#CFCFCD</color>
+    <color name="liver_chestnut">#55453A</color>
+    <color name="bistre">#362419</color>
+
+    <!-- Aliases -->
+    <color name="colorPrimary">#4D2308</color>
+    <color name="colorPrimaryDark">#362419</color>
+    <color name="colorAccent">#8B9B93</color>
+
+    <color name="bg_light">#F2EDE8</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#212121</color>
-    
+
     <!-- Action Colors -->
-    <color name="color_get_location">#1A73E8</color>
-    <color name="color_start">#34A853</color>
-    <color name="color_stop">#EA4335</color>
-    <color name="color_map">#FBBC04</color>
-    <color name="color_history">#9334E6</color>
-    
+    <color name="color_get_location">#4D2308</color>
+    <color name="color_start">#4D2308</color>
+    <color name="color_stop">#CFCFCD</color>
+    <color name="color_stop_text">#362419</color>
+    <color name="color_map">#EEE8E2</color>
+    <color name="color_history">#E8EEE9</color>
+    <color name="color_share_border">#4D2308</color>
+
     <!-- Text Colors -->
-    <color name="text_primary">#202124</color>
-    <color name="text_secondary">#5F6368</color>
-    
+    <color name="text_primary">#362419</color>
+    <color name="text_secondary">#8B9B93</color>
+    <color name="text_liver">#55453A</color>
+
     <!-- Card & Elevation -->
     <color name="card_bg">#FFFFFF</color>
-    <color name="divider">#E8EAED</color>
+    <color name="divider">#EDE8E2</color>
+
+    <!-- Tab -->
+    <color name="tab_bg">#4D2308</color>
+    <color name="tab_active_text">#CFCFCD</color>
+    <color name="tab_inactive_text">#8B9B93</color>
+    <color name="toolbar_bg">#362419</color>
+    <color name="toolbar_title">#CFCFCD</color>
 </resources>
